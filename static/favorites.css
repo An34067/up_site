@@ -1,0 +1,71 @@
+
+.hero {
+    text-align: center;
+    padding: 3rem 0 2rem;
+}
+
+.hero h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1rem;
+    color: #666;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.accent-text {
+    color: var(--accent);
+    font-style: italic;
+}
+
+.empty-favorites {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+    grid-column: 1 / -1;
+}
+
+.empty-favorites a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.empty-favorites a:hover {
+    text-decoration: underline;
+}
+
+.books-container {
+    margin-bottom: 5rem;
+    min-height: 300px;
+}
+.clear-fav-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.75rem 1rem;
+    background: var(--white);
+    color: var(--terracotta);
+    border: 1px solid var(--terracotta);
+    border-radius: 2rem;
+    font-family: "Inter", sans-serif;
+    font-size: 0.85rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+    z-index: 100;
+}
+
+.clear-fav-btn:hover {
+    background: var(--terracotta);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(224, 122, 95, 0.3);
+}
+
+.clear-fav-btn i {
+    margin-right: 0.5rem;
+}

@@ -1,0 +1,148 @@
+
+.hero {
+    text-align: center;
+    padding: 4rem 0 3rem;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.125rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.accent-text {
+    color: var(--accent);
+    font-style: italic;
+}
+
+
+.search-bar {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    position: relative;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 1.25rem 3rem 1.25rem 3.5rem;
+    border-radius: 1rem;
+    border: none;
+    box-shadow: var(--shadow);
+    font-size: 1rem;
+    outline: none;
+    transition: box-shadow 0.3s;
+}
+
+.search-bar input:focus {
+    box-shadow: 0 0 0 3px rgba(212, 163, 115, 0.3), var(--shadow);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+
+.filter-bar {
+    position: sticky;
+    top: 5rem;
+    z-index: 30;
+    margin-bottom: 3rem;
+}
+
+.filter-content {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 1.5rem;
+    padding: 1rem;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.genre-filters {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.genre-filters::-webkit-scrollbar {
+    display: none;
+}
+
+.sort-view {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.view-toggle {
+    display: flex;
+    gap: 0.25rem;
+    border: 1px solid rgba(44, 36, 27, 0.1);
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+}
+
+.view-btn {
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.view-btn.active {
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--ink);
+}
+
+.books-container {
+    margin-bottom: 5rem;
+    min-height: 300px;
+}
+
+.no-results {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 968px) {
+    .filter-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .sort-view {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 640px) {
+    .filter-bar {
+        position: relative;
+        top: 0;
+    }
+}

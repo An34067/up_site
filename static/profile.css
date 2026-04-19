@@ -1,0 +1,241 @@
+.p-container {
+    margin: 0;
+    padding: 2rem 0;
+    flex: 1;
+}
+.p-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.panel {
+    width: 280px;
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+}
+.panel-cont {
+    display: flex;
+    flex-direction: column;
+}
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Playfair Display", serif;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+.user h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+}
+.user span {
+    font-size: 0.875rem;
+    color: var(--gray);
+}
+.user hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(44, 36, 27, 0.1);
+    margin-top: 1.5rem;
+}
+.panel-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--ink);
+}
+.item:hover {
+    background-color: rgba(212, 163, 115, 0.1);
+}
+.item.active {
+    background-color: rgba(212, 163, 115, 0.2);
+    color: var(--accent);
+}
+.item.active i {
+    color: var(--accent);
+}
+.item i {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+    color: var(--gray);
+}
+.item p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+}
+.logout {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    color: var(--terracotta);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+.logout:hover {
+    background-color: rgba(224, 122, 95, 0.1);
+}
+.logout i {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+.logout p {
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 0;
+}
+.p-info {
+    flex: 1;
+    max-width: 600px;
+    background-color: var(--white);
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+}
+.p-info-cont {
+    display: flex;
+    flex-direction: column;
+}
+.info-header {
+    margin-bottom: 2rem;
+}
+.info-header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+}
+.info-header > p {
+    color: var(--gray);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+.activity-cards {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+.card {
+    flex: 1;
+    background-color: var(--back);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+}
+.card span {
+    display: block;
+    font-family: "Playfair Display", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+}
+.card p {
+    font-size: 0.875rem;
+    color: var(--gray);
+    margin: 0;
+}
+.activity {
+    margin-top: 1rem;
+}
+.activity h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+}
+.list {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+.list-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--back);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.list-icon i {
+    color: var(--accent);
+    font-size: 1rem;
+}
+.desc {
+    flex: 1;
+}
+.desc h4 {
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+}
+.desc span {
+    font-size: 0.875rem;
+    color: var(--gray);
+}
+.activity hr {
+    border: none;
+    border-top: 1px solid rgba(44, 36, 27, 0.08);
+    margin: 0;
+}
+@media (max-width: 968px) {
+    .p-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .panel {
+        width: 100%;
+        max-width: 400px;
+    }
+    .p-info {
+        width: 100%;
+        max-width: 400px;
+    }
+    .activity-cards {
+        flex-direction: column;
+    }
+}
