@@ -32,7 +32,7 @@ async function loadBookDetails() {
         const html = `
             <div class="details-container">
                 <div class="details-back">
-                    <a href="home.html" class="back-link">
+                    <a href="index.html" class="back-link">
                         <i class="fas fa-arrow-left"></i> Back to Library
                     </a>
                 </div>
