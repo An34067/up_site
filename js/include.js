@@ -9,7 +9,7 @@ async function loadComponents() {
 }
 
 function setActiveNavLink() {
-    const current = location.pathname.split('/').pop() || 'home.html';
+    const current = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav-links a').forEach(a => {
         a.classList.toggle('active', a.getAttribute('href') === current);
     });
