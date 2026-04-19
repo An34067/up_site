@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="static/base.css">
+    <link rel="stylesheet" href="static/navigation.css">
+    <link rel="stylesheet" href="static/footer.css">
+    <link rel="stylesheet" href="static/components.css">
+    <link rel="stylesheet" href="static/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="navigation"></div>
+
+    <main class="container">
+        <div class="hero">
+            <h1>Discover Your Next<br><span class="accent-text">Great Adventure</span></h1>
+            <p>Explore thousands of titles, curate your personal library, and find your next favorite story.</p>
+            <div class="search-bar">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="search-input" placeholder="Search by title, author, or ISBN...">
+            </div>
+        </div>
+
+        <div class="filter-bar">
+            <div class="filter-content">
+                <div class="genre-filters">
+                    <button class="genre-pill active" data-genre="all">All Books</button>
+                    <button class="genre-pill" data-genre="fiction">Fiction</button>
+                    <button class="genre-pill" data-genre="mystery">Mystery</button>
+                    <button class="genre-pill" data-genre="sci-fi">Sci-Fi</button>
+                    <button class="genre-pill" data-genre="romance">Romance</button>
+                    <button class="genre-pill" data-genre="non-fiction">Non-Fiction</button>
+                </div>
+
+                <div class="sort-view">
+                    <select id="sort-select" class="sort-select">
+                        <option value="relevance">Relevance</option>
+                        <option value="title">Title A-Z</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                    <div class="view-toggle">
+                        <button class="view-btn active">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="view-btn">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="books-container">
+            <div class="grid grid-3" id="books-grid"></div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="js/include.js"></script>
+    <script src="js/books.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+
+</html>
