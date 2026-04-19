@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+    <link rel="stylesheet" href="static/base.css">
+    <link rel="stylesheet" href="static/navigation.css">
+    <link rel="stylesheet" href="static/footer.css">
+    <link rel="stylesheet" href="static/components.css">
+    <link rel="stylesheet" href="static/favorites.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="navigation"></div>
+    
+    <button class="clear-fav-btn" onclick="clearFavorites()">
+        <i class="fas fa-trash-alt"></i> Clear All
+    </button>
+    
+    <main class="container">
+        <div class="hero">
+            <h1>Your <span class="accent-text">Favorites</span></h1>
+            <p>Books you have saved.</p>
+        </div>
+        
+        <div class="books-container">
+            <div class="grid grid-3" id="books-grid">
+                <p style="text-align:center; padding: 3rem;">Loading...</p>
+            </div>
+        </div> 
+    </main>
+    
+    <div id="footer"></div>
+
+    <script src="js/include.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        function getFavorites() {
+            return JSON.parse(localStorage.getItem('favorites') || '[]');
+        }
+
+        function clearFavorites() {
+            if (confirm('Clear all favorites?')) {
+                localStorage.removeItem('favorites');
+                loadFavorites(); 
+            }
+        }
+
+        function removeFavorite(id) {
+            let favorites = getFavorites();
+            const index = favorites.findIndex(fav => fav.id === id);
+            
+            if (index > -1) {
+                favorites.splice(index, 1);
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+                loadFavorites();
+            }
+        }
+
+        function loadFavorites() {
+            const favorites = getFavorites();
+            const container = document.getElementById('books-grid');
+            
+            if (favorites.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-favorites">
+                        <p style="font-size: 1.2rem; margin-bottom: 1rem;">No favorite books yet</p>
+                        <a href="home.html" style="color: #d4a373; text-decoration: none; font-size: 1.1rem;">
+                            Browse Collection
+                        </a>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = favorites.map(book => `
+                <div class="book-card">
+                    <div class="book-cover">
+                        <button class="favorite-btn active" onclick="removeFavorite('${book.id}')">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                        <img src="${book.image}" alt="${book.title}">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">${book.title}</h3>
+                        <p class="book-author">${book.author}</p>
+                        <span class="genre-tag">${book.genre}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(loadFavorites, 100);
+        });
+    </script>
+</body>
+</html>
